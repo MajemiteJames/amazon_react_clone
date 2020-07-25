@@ -2,13 +2,12 @@ import React from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./Screens/HomeScreen";
-import productScreen from "./Screens/ProductScreen";
+import ProductScreen from "./Screens/ProductScreen";
 
 function App() {
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");
   };
-
   const closeMenu = () => {
     document.querySelector(".sidebar").classList.remove("open");
   };
@@ -42,7 +41,7 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
-            <Route path="/product/:id" component={productScreen} />
+            <Route path="/product/:id" component={ProductScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
           </div>
         </main>
