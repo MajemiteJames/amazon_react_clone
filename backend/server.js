@@ -1,12 +1,14 @@
 import express from "express";
 import data from "./data";
 import dotenv from "dotenv";
+const bodyParser = require("body-parser");
 import userRoute from "./routes/userRoute";
 const connectDB = require("./config/db");
 
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 
 connectDB();
 
