@@ -4,7 +4,11 @@
   "description": "Amazon clone application with ReactJS and NodeJS",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --watch backend --exec babel-node backend/server.js"
+    "build": "npm run clean && npm run build-babel",
+    "build-babel": "babel backend -d build",
+    "clean": "rm -rf build && mkdir build",
+    "start": "npm run build && node ./build/server.js",
+    "dev": "nodemon --watch backend --exec babel-node backend/server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +25,7 @@
   },
   "homepage": "https://github.com/MajemiteJames/amazon_react_clone#readme",
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
