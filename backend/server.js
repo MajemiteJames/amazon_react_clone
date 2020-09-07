@@ -29,6 +29,9 @@ app.use("/api/products", productRoute);
 // app.get("/api/products", (req, res) => {
 //   res.send(data.products);
 // });
+app.get("/", (req, res) => {
+  res.status(200).send("The Port for shop for me App");
+});
 
 app.listen(5000, () => {
   console.log("Server started at http://localhost:5000");
